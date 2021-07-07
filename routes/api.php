@@ -27,6 +27,7 @@ Route::group(['prefix' => 'api'], function() use($middleware) {
 		Route::post('accounts/{id}/follow', 'Api\ApiV1Controller@accountFollowById')->middleware($middleware);
 		Route::post('accounts/{id}/unfollow', 'Api\ApiV1Controller@accountUnfollowById')->middleware($middleware);
 		Route::post('accounts/{id}/block', 'Api\ApiV1Controller@accountBlockById')->middleware($middleware);
+        Route::post('reports', 'Api\ApiV1Controller@accountReport')->middleware($middleware);
 		Route::post('accounts/{id}/unblock', 'Api\ApiV1Controller@accountUnblockById')->middleware($middleware);
 		Route::post('accounts/{id}/pin', 'Api\ApiV1Controller@accountEndorsements')->middleware($middleware);
 		Route::post('accounts/{id}/unpin', 'Api\ApiV1Controller@accountEndorsements')->middleware($middleware);
